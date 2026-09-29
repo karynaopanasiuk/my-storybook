@@ -1,0 +1,26 @@
+name: Chromatic
+
+on: push
+
+jobs:
+  chromatic:
+    name: Publish Storybook to Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Chromatic needs the full git history to find baselines.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Publish to Chromatic
+        run: npm run chromatic -- --exit-zero-on-changes
+        env:
+          # Add this secret in GitHub → Settings → Secrets and variables → Actions.
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
