@@ -1,4 +1,7 @@
 import type { Preview } from '@storybook/react-vite'
+// Inter Variable, the font of the Figma design system (typography tokens use this family name).
+import '@fontsource-variable/inter'
+import '../src/styles/tailwind.css'
 
 const preview: Preview = {
   parameters: {

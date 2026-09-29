@@ -10,9 +10,13 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic"
+    "chromatic": "chromatic",
+    "tokens": "style-dictionary build --config style-dictionary.config.mjs",
+    "tokens:pull": "node scripts/figma-to-tokens.mjs",
+    "tokens:sync": "npm run tokens:pull && npm run tokens"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -23,6 +27,7 @@
     "@storybook/addon-mcp": "^10.6.0",
     "@storybook/addon-vitest": "^10.6.0",
     "@storybook/react-vite": "^10.6.0",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
@@ -33,6 +38,8 @@
     "oxlint": "^1.81.0",
     "playwright": "latest",
     "storybook": "^10.6.0",
+    "style-dictionary": "^5.5.5",
+    "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
     "vitest": "latest"
