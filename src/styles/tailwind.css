@@ -1,0 +1,11 @@
+/* Tailwind theme + utilities (no preflight, so the Storybook example components keep their own CSS). */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* Design tokens generated from Figma by Style Dictionary (npm run tokens). Do not edit them. */
+@import "./tokens.theme.css";
+@import "./tokens.css";
+@import "./tokens.modes.css";
+
+@source "../components";
